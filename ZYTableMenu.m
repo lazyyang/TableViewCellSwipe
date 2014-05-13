@@ -52,12 +52,15 @@
     BOOL shoudReceivePointTouch = YES;
     
     CGPoint location = [self.view convertPoint:didHitPoint fromView:view];
-    CGRect rect = [self.view  convertRect:self.activeCell.frame toView:self.view];
-    shoudReceivePointTouch = CGRectContainsPoint(rect, location);
+    CGRect rect = [self.view  convertRect:self.activeCell.menuView.frame toView:self.view];
+    shoudReceivePointTouch = CGRectContainsPoint(rect, location);//location是否在rect里面
     if (!shoudReceivePointTouch) {
         [self hideMenuActive];
+        return view;
     }
-    return shoudReceivePointTouch?[self.activeCell hitTest:didHitPoint withEvent:event]:view;
+    else{
+        return [self.activeCell hitTest:didHitPoint withEvent:event];
+    }
 }
 
 - (void)hideMenuActive{

@@ -11,13 +11,10 @@
 @class ZYTableViewCell;
 
 @protocol menuActionDelegate <NSObject>
-
-@optional
 - (void)tableMenuDidShowInCell:(ZYTableViewCell *)cell;
 - (void)tableMenuWillShowInCell:(ZYTableViewCell *)cell;
 - (void)tableMenuDidHideInCell:(ZYTableViewCell *)cell;
 - (void)tableMenuWillHideInCell:(ZYTableViewCell *)cell;
-
 - (void)menuChooseIndex:(NSInteger)cellIndexNum menuIndexNum:(NSInteger)menuIndexNum;
 @required
 
@@ -25,6 +22,7 @@
 
 @interface ZYTableViewCell : UITableViewCell
 @property (nonatomic,assign) id<menuActionDelegate>menuActionDelegate;
+@property (nonatomic,strong) UIView *menuView;
 
 -(void)configWithData:(NSIndexPath *)indexPath menuData:(NSArray *)menuData cellFrame:(CGRect)cellFrame;
 - (void)setMenuHidden:(BOOL)hidden animated:(BOOL)animated completionHandler:(void (^)(void))completionHandler;

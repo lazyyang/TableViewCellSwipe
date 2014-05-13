@@ -14,8 +14,9 @@
 @property (nonatomic,assign) CGFloat startX;
 @property (nonatomic,assign) CGFloat cellX;
 @property (nonatomic,strong) NSIndexPath *myIndexPath;
-@property (nonatomic,strong) UIView *menuView;
 @property (nonatomic,assign) BOOL isMenuViewHidden;
+@property (nonatomic,assign) NSInteger btnCnt;
+@property (nonatomic,assign) CGRect btnFrame;
 
 @end
 
@@ -40,7 +41,6 @@
         self.cellView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.cellView];
         
-        
         UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(cellPanGes:)];
         panGes.delegate = self;
         panGes.delaysTouchesBegan = YES;
@@ -54,6 +54,8 @@
 -(void)configWithData:(NSIndexPath *)indexPath menuData:(NSArray *)menuData cellFrame:(CGRect)cellFrame
 {
     self.myIndexPath = indexPath;
+    self.btnCnt = menuData.count;
+    self.btnFrame = cellFrame;
     self.cellView.frame = self.bounds;
     self.menuView.frame = CGRectMake(320 - cellFrame.size.width*[menuData count], 0, cellFrame.size.width*[menuData count], cellFrame.size.height);
     self.isMenuViewHidden = YES;
@@ -98,8 +100,8 @@
 }
 
 -(void)cellReset:(float)moveX{
-    if (self.cellX <= -80*3) {//cellX为起始位置，向右滑动
-        NSLog(@"%f",self.cellX);
+    if (self.cellX <= -self.btnFrame.size.width*self.btnCnt) {//cellX为起始位置
+        NSLog(@"XXXXX%f",self.cellX);
         if (moveX <= 0) {
             return;
         }
@@ -112,13 +114,13 @@
             }];
             
         }
-    }else{//想左滑动
+    }else{
         if (moveX >= 0) {
             return;
         }
         else{
             [UIView animateWithDuration:0.5 animations:^{
-                [self initCellFrame:-3*80];
+                [self initCellFrame:-self.btnFrame.size.width*self.btnCnt];
             } completion:^(BOOL finished) {
                 self.isMenuViewHidden = NO;
                 [self.menuActionDelegate tableMenuDidShowInCell:self];
