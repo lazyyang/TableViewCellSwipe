@@ -10,7 +10,6 @@
 
 @interface ZYTableViewCell ()<UIGestureRecognizerDelegate>
 
-@property (nonatomic,strong) UIView *cellView;//用来显示cell上得内容
 @property (nonatomic,assign) CGFloat startX;
 @property (nonatomic,assign) CGFloat cellX;
 @property (nonatomic,strong) NSIndexPath *myIndexPath;
@@ -96,6 +95,33 @@
     }else if (panGes.state == UIGestureRecognizerStateCancelled){
         [self cellReset:pointer.x - self.startX];
         return;
+    }
+    [self cellViewMoveToX:self.cellX + pointer.x - self.startX];
+
+}
+
+-(void)cellViewMoveToX:(float)x{
+    if (x <= -(self.btnCnt*self.btnFrame.size.width+20)) {
+        x = -(self.btnCnt*self.btnFrame.size.width+20);
+    }else if (x >= 50){
+        x = 50;
+    }
+    self.cellView.frame = CGRectMake(x, 0, 320, 80);
+    if (x == -(self.btnCnt*self.btnFrame.size.width+20)) {
+        [UIView animateWithDuration:0.2 animations:^{
+            [self initCellFrame:-self.btnCnt*80];
+        } completion:^(BOOL finished) {
+            self.isMenuViewHidden = NO;
+            [self.menuActionDelegate tableMenuDidShowInCell:self];
+        }];
+    }
+    if (x == 50) {
+        [UIView animateWithDuration:0.2 animations:^{
+            [self initCellFrame:0];
+        } completion:^(BOOL finished) {
+            self.isMenuViewHidden = YES;
+            [self.menuActionDelegate tableMenuDidHideInCell:self];
+        }];
     }
 }
 

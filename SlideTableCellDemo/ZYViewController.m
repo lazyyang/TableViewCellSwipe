@@ -7,7 +7,7 @@
 //
 
 #import "ZYViewController.h"
-#import "ZYTableViewCell.h"
+#import "ZYMyTableViewCellDemo.h"
 #import "NSMutableArray+ZYUtilityButtons.h"
 
 static NSString *const cellIdentifier = @"cellID";
@@ -45,7 +45,7 @@ static NSString *const cellIdentifier = @"cellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZYTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    ZYMyTableViewCellDemo *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.menuActionDelegate = self;
     NSMutableArray *menuArr = [[NSMutableArray alloc] init];
     [menuArr zy_addUtilityButtonWithColor:[UIColor lightGrayColor] title:@"更多"];
@@ -64,7 +64,7 @@ static NSString *const cellIdentifier = @"cellID";
     
     //createTableView
     _myTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    [self.myTableView registerClass:[ZYTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    [self.myTableView registerClass:[ZYMyTableViewCellDemo class] forCellReuseIdentifier:cellIdentifier];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.view addSubview:self.myTableView];

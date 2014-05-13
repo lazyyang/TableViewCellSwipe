@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ZYTableMenu.h"
-@interface ZYViewController : ZYTableMenu
+@interface ZYViewController : ZYTableMenu<UITableViewDataSource,UITableViewDelegate>
 
 @end

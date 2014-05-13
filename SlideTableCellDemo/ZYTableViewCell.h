@@ -23,6 +23,8 @@
 @interface ZYTableViewCell : UITableViewCell
 @property (nonatomic,assign) id<menuActionDelegate>menuActionDelegate;
 @property (nonatomic,strong) UIView *menuView;
+@property (nonatomic,strong) UIView *cellView;//用来显示cell上得内容
+
 
 -(void)configWithData:(NSIndexPath *)indexPath menuData:(NSArray *)menuData cellFrame:(CGRect)cellFrame;
 - (void)setMenuHidden:(BOOL)hidden animated:(BOOL)animated completionHandler:(void (^)(void))completionHandler;

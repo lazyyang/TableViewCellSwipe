@@ -10,6 +10,7 @@
 		3AC3E1731921E5F300D83F71 /* NSMutableArray+ZYUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC3E1721921E5F300D83F71 /* NSMutableArray+ZYUtilityButtons.m */; };
 		DF132C0D1921B051002CE587 /* ZYTableMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DF132C0C1921B051002CE587 /* ZYTableMenu.m */; };
 		DF132C101921B3B8002CE587 /* ZYMaskVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = DF132C0F1921B3B8002CE587 /* ZYMaskVIew.m */; };
+		DF132C5D19222D73002CE587 /* ZYMyTableViewCellDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF132C5C19222D73002CE587 /* ZYMyTableViewCellDemo.m */; };
 		DF5EA6F619212B380092A848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5EA6F519212B380092A848 /* Foundation.framework */; };
 		DF5EA6F819212B380092A848 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5EA6F719212B380092A848 /* CoreGraphics.framework */; };
 		DF5EA6FA19212B380092A848 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5EA6F919212B380092A848 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		DF132C0C1921B051002CE587 /* ZYTableMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTableMenu.m; sourceTree = "<group>"; };
 		DF132C0E1921B3B8002CE587 /* ZYMaskVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYMaskVIew.h; sourceTree = "<group>"; };
 		DF132C0F1921B3B8002CE587 /* ZYMaskVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYMaskVIew.m; sourceTree = "<group>"; };
+		DF132C5B19222D73002CE587 /* ZYMyTableViewCellDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYMyTableViewCellDemo.h; path = ../ZYMyTableViewCellDemo.h; sourceTree = "<group>"; };
+		DF132C5C19222D73002CE587 /* ZYMyTableViewCellDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYMyTableViewCellDemo.m; path = ../ZYMyTableViewCellDemo.m; sourceTree = "<group>"; };
 		DF5EA6F219212B380092A848 /* SlideTableCellDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideTableCellDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5EA6F519212B380092A848 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF5EA6F719212B380092A848 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +72,8 @@
 		DF5EA71C19212B380092A848 /* SlideTableCellDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlideTableCellDemoTests-Info.plist"; sourceTree = "<group>"; };
 		DF5EA71E19212B380092A848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF5EA72019212B380092A848 /* SlideTableCellDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTableCellDemoTests.m; sourceTree = "<group>"; };
-		DF5EA72A19212B5C0092A848 /* ZYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTableViewCell.h; sourceTree = "<group>"; };
-		DF5EA72B19212B5C0092A848 /* ZYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTableViewCell.m; sourceTree = "<group>"; };
+		DF5EA72A19212B5C0092A848 /* ZYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYTableViewCell.h; path = SlideTableCellDemo/ZYTableViewCell.h; sourceTree = "<group>"; };
+		DF5EA72B19212B5C0092A848 /* ZYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYTableViewCell.m; path = SlideTableCellDemo/ZYTableViewCell.m; sourceTree = "<group>"; };
 		DF5EA72E1921309B0092A848 /* 1HighLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1HighLight.png; sourceTree = "<group>"; };
 		DF5EA72F1921309B0092A848 /* 1Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1Normal.png; sourceTree = "<group>"; };
 		DF5EA7301921309B0092A848 /* 2HighLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2HighLight.png; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				DF132C0F1921B3B8002CE587 /* ZYMaskVIew.m */,
 				DF132C0B1921B051002CE587 /* ZYTableMenu.h */,
 				DF132C0C1921B051002CE587 /* ZYTableMenu.m */,
+				DF5EA72A19212B5C0092A848 /* ZYTableViewCell.h */,
+				DF5EA72B19212B5C0092A848 /* ZYTableViewCell.m */,
 				DF5EA72D1921309A0092A848 /* image */,
 				DF5EA6FB19212B380092A848 /* SlideTableCellDemo */,
 				DF5EA71A19212B380092A848 /* SlideTableCellDemoTests */,
@@ -148,8 +153,8 @@
 				DF5EA70719212B380092A848 /* Main.storyboard */,
 				DF5EA70A19212B380092A848 /* ZYViewController.h */,
 				DF5EA70B19212B380092A848 /* ZYViewController.m */,
-				DF5EA72A19212B5C0092A848 /* ZYTableViewCell.h */,
-				DF5EA72B19212B5C0092A848 /* ZYTableViewCell.m */,
+				DF132C5B19222D73002CE587 /* ZYMyTableViewCellDemo.h */,
+				DF132C5C19222D73002CE587 /* ZYMyTableViewCellDemo.m */,
 				DF5EA70D19212B380092A848 /* Images.xcassets */,
 				DF5EA6FC19212B380092A848 /* Supporting Files */,
 			);
@@ -305,6 +310,7 @@
 				DF132C0D1921B051002CE587 /* ZYTableMenu.m in Sources */,
 				DF132C101921B3B8002CE587 /* ZYMaskVIew.m in Sources */,
 				DF5EA70219212B380092A848 /* main.m in Sources */,
+				DF132C5D19222D73002CE587 /* ZYMyTableViewCellDemo.m in Sources */,
 				DF5EA70619212B380092A848 /* ZYAppDelegate.m in Sources */,
 				3AC3E1731921E5F300D83F71 /* NSMutableArray+ZYUtilityButtons.m in Sources */,
 				DF5EA72C19212B5C0092A848 /* ZYTableViewCell.m in Sources */,

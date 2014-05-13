@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SlideTableCellDemo/ZYTableViewCell.m"
-            timestampString = "421643154.018307"
+            timestampString = "421670533.464431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-cellPanGes:"
             landmarkType = "5">
          </BreakpointContent>
